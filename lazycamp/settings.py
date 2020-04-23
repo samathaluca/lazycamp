@@ -26,7 +26,7 @@ SECRET_KEY = '7r3a^r%2=g!fo987tqpolxy!zf9-t%bparj$t$o$4f*jl^j*x&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [os.environ.get("C9_HOSTNAME"), 'localhost', 'lazycamp.herokuapp.com']
 
 
 # Application definition
@@ -76,7 +76,7 @@ WSGI_APPLICATION = 'lazycamp.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {      
-    'default': dj_database_url.parse(os.environ.get("postgres://cuebhncusloycm:11997c0b20e03a5c00e33151058f399832aaf67bb957dbc71093954a33e96f54@ec2-46-137-156-205.eu-west-1.compute.amazonaws.com:5432/dbmdppr71ph98h"))  
+    'default': dj_database_url.parse("postgres://cuebhncusloycm:11997c0b20e03a5c00e33151058f399832aaf67bb957dbc71093954a33e96f54@ec2-46-137-156-205.eu-west-1.compute.amazonaws.com:5432/dbmdppr71ph98h")
     } 
 
 

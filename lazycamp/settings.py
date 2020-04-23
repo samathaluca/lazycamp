@@ -75,17 +75,17 @@ WSGI_APPLICATION = 'lazycamp.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-# DATABASES = {      
-#     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))  
-#     } 
+DATABASES = {      
+    'default': dj_database_url.parse(os.environ.get("postgres://cuebhncusloycm:11997c0b20e03a5c00e33151058f399832aaf67bb957dbc71093954a33e96f54@ec2-46-137-156-205.eu-west-1.compute.amazonaws.com:5432/dbmdppr71ph98h"))  
+    } 
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
 
 # if "DATABASE_URL" in os.environ:
 #         DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}

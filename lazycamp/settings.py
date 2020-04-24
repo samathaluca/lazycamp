@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crib4tonight',
+    'accounts',
 ]
 
 MIDDLEWARE = [

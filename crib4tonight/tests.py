@@ -5,4 +5,4 @@ from django.test import TestCase
 class TestTravis(Testcase):
 
     def test_travis_CI(self):
-        self.assertEqual(2,0)
+        self.assertEqual(2,2)

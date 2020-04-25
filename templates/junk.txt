@@ -1,0 +1,3 @@
+<link rel="stylesheet" href="dist/css/lightbox.min.css">
+  <!-- Lightbox -->
+  <link rel="stylesheet" href="{% static 'css/lightbox.min.css' %}">

@@ -1,3 +1,9 @@
 <link rel="stylesheet" href="dist/css/lightbox.min.css">
   <!-- Lightbox -->
   <link rel="stylesheet" href="{% static 'css/lightbox.min.css' %}">
+
+
+  https://startbootstrap.com/themes/grayscale/
+
+
+  DISABLE_COLLECTSTATIC

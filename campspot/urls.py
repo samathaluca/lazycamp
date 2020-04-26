@@ -7,9 +7,12 @@
 
 from django.urls import path
 
-from crib4tonight import views
+from campspot import views
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('about/', views.about, name='about'),
+    path('', views.campspot, name='campspot'),
+    # path('about/', views.about, name='about'),
+    # path('<int:campspot_id>', views.campspot, name='campspot'),
+    path('search/', views.search, name='search'),
+    path('campspots/', views.campspots, name='campspots'),
 ]

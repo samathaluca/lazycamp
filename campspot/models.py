@@ -13,6 +13,7 @@ class campme(models.Model):
     enquiry_date = models.DateTimeField(default=datetime.now, blank=True)
     extras_price = models.IntegerField()
     setup4U = models.IntegerField(default=0)
+    # is_available = models.BooleanField(default=True)
 
     def __str__(self):
         return self.name

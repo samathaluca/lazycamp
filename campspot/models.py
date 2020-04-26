@@ -1,8 +1,10 @@
+from django.conf import settings
 from django.db import models
 from datetime import datetime
+from django.utils import timezone
 
 # Create your models here.
-class campspot(models.Model):
+class campme(models.Model):
     name = models.CharField(max_length=254, default='')
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)

@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'contacts.apps.ContactsConfig',
+    'campspot.apps.CampspotConfig',
     'crib4tonight',
     'accounts',
 ]

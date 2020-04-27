@@ -30,7 +30,7 @@
                   <label class="sr-only">Country</label>
                   <select name="state" class="form-control">
                     <option selected="true" disabled="disabled">County (All)</option>
-                    {% for key,value in state_choices.items %}
+                    {% for key,value in county_choices.items %}
                       <option value="{{ key }}">{{ value }}</option>
                     {% endfor %}
                   </select>

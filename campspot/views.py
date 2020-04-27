@@ -7,7 +7,7 @@ from campspot.models import campme
 def index(request):
   campspots = campme.objects.order_by('-list_date').filter(is_published=True)
 
-  paginator = Paginator(campspots, 6)
+  paginator = Paginator(campspots, 3)
   page = request.GET.get('page')
   paged_campspots = paginator.get_page(page)
 

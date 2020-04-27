@@ -43,9 +43,10 @@
           <div class="col-md-6 col-lg-4 mb-4">
               <div class="card campspot-preview">
                 <img class="card-img-top" src="{{ campspot.photo_main.url }}" alt="">
-                <div class="card-img-overlay">
+                <!-- <div class="card-img-overlay"> -->
+                <div>
                   <h2>
-                    <span class="badge badge-secondary text-white">${{ campspot.price | intcomma }}</span>
+                    <span class="badge badge-secondary text-white">£{{ campspot.price | intcomma }}</span>
                   </h2>
                 </div>
                 <div class="card-body">
@@ -77,16 +78,16 @@
                       <i class="fas fa-clock"></i> {{ campspot.list_date | timesince }}</div>
                   </div>
                  
-                  <a href="{% url 'campspot' campspot.id %}">More Info</a>
+                  <a href="{% url 'campspot' campspot.id %}" class="card-link" >More Info</a>
                    <hr>
                 </div>
-                <a href="{% url 'campspot' campspot.id %}">More Info</a>
+                <!-- <a class="card-link" href="{% url 'campspot' campspot.id %}">More Info</a> -->
               </div>
               <a href="{% url 'campspot' campspot.id %}">More Info</a>
               <hr>
             </div>
             <!-- <p><a href="{% url 'campspot' campspot.id %}"  class="btn btn-md login-btn new-post buy" style='width: auto;'>Read more</a></p> -->
-            <a href="{% url 'campspot' campspot.id %}">More Info</a>
+            <!-- <a href="{% url 'campspot' campspot.id %}">More Info</a> -->
           {% endfor %}
         {% else %}
           <div class="col-md-12">

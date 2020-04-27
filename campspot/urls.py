@@ -13,9 +13,10 @@ urlpatterns = [
     
     path('', views.index, name='camps'),
     # path('<int:campme_id>', views.campme, name='campme'),
-    # path('about/', views.about, name='about'),
     # path('<int:campspot_id>', views.campspot, name='campspot'),
     path('search/', views.search, name='search'),
     path('campspots/', views.campspots, name='campspots'),
+    # path('campspot/<campme_id>', views.campspot, name='campspot'),
     path('campspot/<campme_id>', views.campspot, name='campspot'),
+    
 ]

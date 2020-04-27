@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 
+{% load static %}
 {% load humanize %}
 
-{% block title %} | {{ campme.title }} {% endblock %}
+{% block title %} | {{ campspot.title }} {% endblock %}
 
 {% block content %}
 <section id="showcase-inner" class="py-5 text-white">
@@ -11,7 +12,7 @@
         <div class="col-md-12">
           <h1 class="display-4">{{ campspot.title }}</h1>
           <p class="lead">
-            <i class="fas fa-map-marker"></i> {{ campme.city }} {{ campme.town }}, {{ campme.postcode }}</p>
+            <i class="fas fa-map-marker"></i> {{ campspot.city }} {{ campspot.town }}, {{ campspot.postcode }}</p>
         </div>
       </div>
     </div>
@@ -26,9 +27,9 @@
             <a href="{% url 'index' %}">Home</a>
           </li>
           <li class="breadcrumb-item">
-            <a href="{% url 'campspots' %}">Camp Spots</a>
+            <a href="{% url 'index' %}">Camp Spots</a>
           </li>
-          <li class="breadcrumb-item active">{{ campme.title }}</li>
+          <li class="breadcrumb-item active">{{ campspot.title }}</li>
         </ol>
       </nav>
     </div>
@@ -44,7 +45,7 @@
       <div class="row">
         <div class="col-md-9">
           <!-- Home Main Image -->
-          <img src="{{ campme.image }}" alt="lazy image" class="img-main img-fluid mb-3">
+          <img src="{{ campspot.image }}" alt="lazy image" class="img-main img-fluid mb-3">
           <!-- Thumbnails -->
         </div>
      
@@ -54,7 +55,7 @@
               <ul class="list-group list-group-flush">
                 <li class="list-group-item text-secondary">
                   <i class="fas fa-money-bill-alt"></i> Price:
-                  <span class="float-right">${{ campme.price | intcomma }}</span>
+                  <span class="float-right">${{ campspot.price | intcomma }}</span>
                 </li>
               </ul>
             </div>
@@ -63,7 +64,7 @@
           <!-- Description -->
           <div class="row mb-5">
             <div class="col-md-12">
-                {{ campme.description }}
+                {{ campspot.description }}
             </div>
           </div>
         </div>
@@ -72,7 +73,7 @@
             <img class="card-img-top" src="" alt="">
             <div class="card-body">
               <h5 class="card-title">Extra prices</h5>
-              <h6 class="text-secondary">{{ campme.extra_prices }}</h6>
+              <h6 class="text-secondary">{{ campspot.extra_prices }}</h6>
             </div>
           </div>
           <button class="btn-primary btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal">Make An Inquiry</button>

@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% load humanize %}
 
 {% block title %} | Browse campspots {% endblock %}
@@ -26,6 +28,7 @@
               <i class="fas fa-home"></i> Home</a>
           </li>
           <li class="breadcrumb-item active"> Browse campspots</li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">our story</a></li>
         </ol>
       </nav>
     </div>
@@ -73,11 +76,17 @@
                     <div class="col-6">
                       <i class="fas fa-clock"></i> {{ campspot.list_date | timesince }}</div>
                   </div>
-                  <hr>
+                 
                   <a href="{% url 'campspot' campspot.id %}">More Info</a>
+                   <hr>
                 </div>
+                <a href="{% url 'campspot' campspot.id %}">More Info</a>
               </div>
+              <a href="{% url 'campspot' campspot.id %}">More Info</a>
+              <hr>
             </div>
+            <!-- <p><a href="{% url 'campspot' campspot.id %}"  class="btn btn-md login-btn new-post buy" style='width: auto;'>Read more</a></p> -->
+            <a href="{% url 'campspot' campspot.id %}">More Info</a>
           {% endfor %}
         {% else %}
           <div class="col-md-12">

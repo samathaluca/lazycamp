@@ -3,12 +3,13 @@ from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from campspot.choices import price_choices, county_choices
 from campspot.models import campme
 
+
 def index(request):
   campspots = campme.objects.order_by('-list_date').filter(is_published=True)
 
   paginator = Paginator(campspots, 6)
   page = request.GET.get('page')
-  paged_listings = paginator.get_page(page)
+  paged_campspots = paginator.get_page(page)
 
   context = {
     'campspots': paged_campspots
@@ -54,7 +55,7 @@ def search(request):
   if 'county' in request.GET:
     county = request.GET['county']
     if county:
-      queryset_list = queryset_list.filter(state__iexact=county)
+      queryset_list = queryset_list.filter(county__iexact=county)
 
   # 
 #   if 'bedrooms' in request.GET:
@@ -72,7 +73,7 @@ def search(request):
     'county_choices': county_choices,
     # 'bedroom_choices': bedroom_choices,
     'price_choices': price_choices,
-    'campspots': queryset_spots,
+    # 'campspots': queryset_spots,
     'values': request.GET
   }
 

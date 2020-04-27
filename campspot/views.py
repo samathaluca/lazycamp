@@ -16,14 +16,14 @@ def index(request):
 
   return render(request, 'campspots/campspots.html', context)
 
-def campspots(request, campme_id):
-  campspots = get_object_or_404(campme, pk=campme_id)
+def campspots(request):
+  
 
   context = {
-    'campspots': campspots
+    'campspots': campme.objects.all()
   }
 
-  return render(request, 'campspots/campspot.html', context)
+  return render(request, 'campspots/campspots.html', context)
 
 def campspot(request, campme_id):
   campspot = get_object_or_404(campme, pk=campme_id)

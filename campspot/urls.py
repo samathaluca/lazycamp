@@ -10,11 +10,12 @@ from django.urls import path
 from campspot import views
 
 urlpatterns = [
-    path('', views.campspot, name='campspot'),
-    path('', views.index, name='campspots'),
-    path('<int:campme_id>', views.campme, name='campme'),
+    
+    path('', views.index, name='camps'),
+    # path('<int:campme_id>', views.campme, name='campme'),
     # path('about/', views.about, name='about'),
-    path('<int:campspot_id>', views.campspot, name='campspot'),
+    # path('<int:campspot_id>', views.campspot, name='campspot'),
     path('search/', views.search, name='search'),
     path('campspots/', views.campspots, name='campspots'),
+    path('campspot/<campme_id>', views.campspot, name='campspot'),
 ]

@@ -49,25 +49,25 @@
                   <div class="campspot-heading text-center">
                     <h4 class="text-primary">{{ campspot.title }}</h4>
                     <p>
-                      <i class="fas fa-map-marker text-secondary"></i> {{ campspot.city }} {{ campspot.state }}, {{ campspot.zipcode }}</p>
+                      <i class="fas fa-map-marker text-secondary"></i> {{ campspot.city }} {{ campspot.county }}, {{ campspot.postcode }}</p>
                   </div>
                   <hr>
                   <div class="row py-2 text-secondary">
                     <div class="col-6">
-                      <i class="fas fa-th-large"></i> Sqft: {{ campspot.sqft }}</div>
+                      <i class="fas fa-th-large"></i> type: {{ campspot.type }}</div>
                     <div class="col-6">
-                      <i class="fas fa-car"></i> Garage: {{ campspot.garage }}</div>
+                      <i class="fas fa-car"></i> parking: {{ campspot.parking }}</div>
                   </div>
                   <div class="row py-2 text-secondary">
                     <div class="col-6">
-                      <i class="fas fa-bed"></i> Bedrooms: {{ campspot.bedrooms }}</div>
+                      <i class="fas fa-bed"></i> Address: {{ campspot.address }}</div>
                     <div class="col-6">
-                      <i class="fas fa-bath"></i> Bathrooms: {{ campspot.bathrooms }}</div>
+                      <i class="fas fa-bath"></i> LateArrival: {{ campspot.LateArrival }}</div>
                   </div>
                   <hr>
                   <div class="row py-2 text-secondary">
                     <div class="col-12">
-                      <i class="fas fa-user"></i> {{ campspot.realtor }}</div>
+                      <i class="fas fa-user"></i> {{ campspot.description }}</div>
                   </div>
                   <div class="row text-secondary pb-2">
                     <div class="col-6">

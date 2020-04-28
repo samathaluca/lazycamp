@@ -1,16 +1,15 @@
 from django.db import models
 from datetime import datetime
-# from campspot.models import camp
-
-# Create your models here.
-
-
-    # photo_main = models.ImageField(upload_to='photos/%Y/%m/%d/')
 
 class Contact(models.Model):
-    name = models.CharField(max_length=254, default='')
-    description = models.TextField()
-    # contact = models.ForeignKey(campspot, on_delete=models.DO_NOTHING)
-
-def __str__(self):
-        return self.name
+  campspot = models.CharField(max_length=200)
+  campspot_id = models.IntegerField()
+  name = models.CharField(max_length=200)
+  email = models.CharField(max_length=100)
+  phone = models.CharField(max_length=100)
+  message = models.TextField(blank=True)
+  contact_date = models.DateTimeField(default=datetime.now, blank=True)
+  user_id = models.IntegerField(blank=True)
+  def __str__(self):
+    return self.name
+    

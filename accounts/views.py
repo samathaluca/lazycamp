@@ -3,6 +3,8 @@ from django.contrib import messages, auth
 from django.contrib.auth.models import User
 from contacts.models import Contact
 
+
+
 def register(request):
   if request.method == 'POST':
     # Get form values
@@ -49,7 +51,10 @@ def login(request):
     if user is not None:
       auth.login(request, user)
       messages.success(request, 'You are now logged in')
-      return redirect('dashboard')
+      return redirect('index')
+    
+    #   return redirect('dashboard')
+    
     else:
       messages.error(request, 'Invalid credentials')
       return redirect('login')

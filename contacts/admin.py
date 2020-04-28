@@ -1,8 +1,25 @@
 from django.contrib import admin
-from .models import Contact
+
+from contacts.models import Contact
+
+
+class ContactAdmin(admin.ModelAdmin):
+  list_display = ('id', 'name', 'campspot', 'email', 'contact_date')
+  list_display_links = ('id', 'name')
+  search_fields = ('name', 'email', 'campspot')
+  list_per_page = 25
+
+admin.site.register(Contact, ContactAdmin)
+# admin.site.register(Contact)
+
+
+
+
+
+
 
 # Register your models here.
-admin.site.register(Contact)
+
 
 # from campspot.models import campspot
 

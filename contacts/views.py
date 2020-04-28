@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.core.mail import send_mail
-from .models import Contact
+from contacts.models import Contact
+from campspot.models import campme
 
 def contact(request):
   if request.method == 'POST':
@@ -12,7 +13,7 @@ def contact(request):
     phone = request.POST['phone']
     message = request.POST['message']
     user_id = request.POST['user_id']
-    # spot_email = request.POST['spot_email']
+    spot_email = request.POST['spot_email']
 
     #  Check if user has made inquiry already
     if request.user.is_authenticated:

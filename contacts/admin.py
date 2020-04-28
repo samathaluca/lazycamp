@@ -2,11 +2,16 @@ from django.contrib import admin
 
 from contacts.models import Contact
 
+from campspot.models import campme
+
 
 class ContactAdmin(admin.ModelAdmin):
-  list_display = ('id', 'name', 'campspot', 'email', 'contact_date')
+#   list_display = ('id', 'name', 'campspot', 'email', 'contact_date')
+#   list_display_links = ('id', 'name')
+#   search_fields = ('name', 'email', 'campspot')
+  list_display = ('id', 'name', 'email', 'contact_date')
   list_display_links = ('id', 'name')
-  search_fields = ('name', 'email', 'campspot')
+  search_fields = ('name', 'email',)
   list_per_page = 25
 
 admin.site.register(Contact, ContactAdmin)

@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'campspot.apps.CampspotConfig',
     'crib4tonight.apps.Crib4TonightConfig',
     'accounts.apps.AccountsConfig',
+    'basket.apps.BasketConfig',
 ]
 
 MIDDLEWARE = [
@@ -69,6 +70,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'basket.contexts.basket_contents'
+                # 'django.template.context_processors.media',
             ],
         },
     },

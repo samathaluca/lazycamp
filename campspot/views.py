@@ -5,17 +5,27 @@ from campspot.models import campme
 
 
 def index(request):
-  campspots = campme.objects.order_by('-list_date').filter(is_published=True)
-
+#   campspots = campme.objects.order_by('price').filter(is_published=True)
+#   campspots = campme.objects.all().filter(is_published=True)
+  campspots = campme.objects.all()
   paginator = Paginator(campspots, 3)
-  page = request.GET.get('page')
-  paged_campspots = paginator.get_page(page)
+
+  page_number = request.GET.get('page')
+  page_campspots = paginator.get_page(page_number)
 
   context = {
-    'campspots': paged_campspots
+    'campspots': page_campspots
   }
 
   return render(request, 'campspots/campspots.html', context)
+
+# def listing(request):
+#     contact_list = Contact.objects.all()
+#     paginator = Paginator(contact_list, 25) # Show 25 contacts per page.
+
+#     page_number = request.GET.get('page')
+#     page_obj = paginator.get_page(page_number)
+#     return render(request, 'list.html', {'page_obj': page_obj})
 
 def campspots(request):
   

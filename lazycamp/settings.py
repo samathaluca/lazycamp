@@ -41,8 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'contacts.apps.ContactsConfig',
     'campspot.apps.CampspotConfig',
-    'crib4tonight',
-    'accounts',
+    'crib4tonight.apps.Crib4TonightConfig',
+    'accounts.apps.AccountsConfig',
 ]
 
 MIDDLEWARE = [

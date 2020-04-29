@@ -45,7 +45,9 @@
           <div class="col-md-6 col-lg-4 mb-4">
               <div class="card campspot-preview">
                 <!-- <img class="card-img-top" src="{{ campspot.photo_main.url }}" alt=""> -->
-                <img class="card-img-top" src="{{ MEDIA_URL }}image.png" alt="nope">
+                <!-- <img class="card-img-top" src="{{ MEDIA_URL }}" alt="nope"> -->
+                <img class="place" src="{{ MEDIA_URL }}{{ campspot.image }}" alt="still nope">
+                <!-- <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ campspot.image }}')"></div> -->
                
                 <!-- <div class="card-img-overlay"> -->
                 <div>

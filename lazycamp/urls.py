@@ -25,5 +25,7 @@ urlpatterns = [
     path('accounts/', include('accounts.urls')),
     path('campspot/', include('campspot.urls')),
     path('contacts/', include('contacts.urls')),
+    path('search/', include('search.urls')),
+    path('basket/', include('basket.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

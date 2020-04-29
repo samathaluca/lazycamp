@@ -1,23 +1,23 @@
 from django.shortcuts import get_object_or_404, render
+from django.contrib.auth.models import User
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from campspot.choices import price_choices, county_choices
 from campspot.models import campme
 
 
 def index(request):
-#   campspots = campme.objects.order_by('price').filter(is_published=True)
-#   campspots = campme.objects.all().filter(is_published=True)
-  campspots = campme.objects.all()
-  paginator = Paginator(campspots, 3)
 
-  page_number = request.GET.get('page')
-  page_campspots = paginator.get_page(page_number)
+    campspots = campme.objects.all()
+    paginator = Paginator(campspots, 3)
+    page = request.GET.get('page')
+    campspots=paginator.get_page(page)
 
-  context = {
-    'campspots': page_campspots
-  }
+    context = {
+    'campspots': campspots,
+    'test': 'Test'
+}
+    return render(request, 'campspots/campspots.html', context)
 
-  return render(request, 'campspots/campspots.html', context)
 
 # def listing(request):
 #     contact_list = Contact.objects.all()
@@ -30,11 +30,17 @@ def index(request):
 def campspots(request):
   
 
-  context = {
-    'campspots': campme.objects.all()
-  }
+    campspots = campme.objects.all()
+    paginator = Paginator(campspots, 3)
+    page = request.GET.get('page')
+    campspots=paginator.get_page(page)
 
-  return render(request, 'campspots/campspots.html', context)
+    context = {
+    'campspots': campspots,
+    'test': 'Test'
+}
+
+    return render(request, 'campspots/campspots.html', context)
 
 def campspot(request, campme_id):
   campspot = get_object_or_404(campme, pk=campme_id)

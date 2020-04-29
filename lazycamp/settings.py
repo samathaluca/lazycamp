@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'crib4tonight.apps.Crib4TonightConfig',
     'accounts.apps.AccountsConfig',
     'basket.apps.BasketConfig',
+    'search.apps.SearchConfig',
 ]
 
 MIDDLEWARE = [
@@ -70,8 +71,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'basket.contexts.basket_contents'
-                # 'django.template.context_processors.media',
+                # 'basket.contexts.basket_contents'
+                'django.template.context_processors.media',
             ],
         },
     },

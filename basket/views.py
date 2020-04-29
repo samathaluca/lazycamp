@@ -31,6 +31,7 @@ def adjust_basket(request, id):
         basket.pop(id)
     
     request.session['basket'] = basket
-    return redirect(reverse('view_basket'))from django.shortcuts import render
-
+    return redirect(reverse('view_basket'))
+    
+    
 # Create your views here.

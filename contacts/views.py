@@ -7,6 +7,7 @@ from campspot.models import campme
 def contact(request):
   if request.method == 'POST':
     campspot_id = request.POST['campspot_id']
+    campme_id = request.POST['campme_id']
     campspot = request.POST['campspot']
     name = request.POST['name']
     email = request.POST['email']
